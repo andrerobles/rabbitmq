@@ -1,12 +1,12 @@
-version: '3'
+version: "3.8"
 services:
   rabbitmq:
-    image: rabbitmq:management
+    image: rabbitmq:3-management
+    container_name: rabbitmq
     ports:
-      - "5672:5672"
-      - "15672:15672"
+      - "5672:5672" # Porta AMQP para comunicação com o NestJS
+      - "15672:15672" # Porta da interface de gerenciamento web
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
 volumes:
   rabbitmq_data:
-
